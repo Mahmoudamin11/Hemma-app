@@ -1,0 +1,1 @@
+export const PRJOECT_NAME = "هِمَّةٌ"

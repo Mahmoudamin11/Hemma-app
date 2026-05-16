@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 import { Colors } from '@/constants/theme/theme';
+import { PRJOECT_NAME } from '@/constants/names';
 
 export default function SplashScreen() {
   const scheme = useColorScheme();
@@ -67,9 +68,9 @@ export default function SplashScreen() {
         barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'}
         backgroundColor={colors.background}
       />
-
+      {/* Header */}
       <View style={styles.center}>
-        {/* Icon Card */}
+        {/* Logo */}
         <Animated.View style={[styles.iconCard, { opacity: iconOpacity, transform: [{ scale: iconScale }] }]}>
           <View style={[
             styles.iconInner,
@@ -85,13 +86,13 @@ export default function SplashScreen() {
             />
           </View>
         </Animated.View>
-
+          {/* Logo */}
         {/* Brand Name */}
         <Animated.Text style={[
           styles.brandName,
           { color: colors.primary, opacity: titleOpacity, transform: [{ translateY: titleY }] },
         ]}>
-          هِمَّةٌ
+          {PRJOECT_NAME}
         </Animated.Text>
 
         {/* Tagline */}
@@ -101,6 +102,7 @@ export default function SplashScreen() {
         ]}>
           رحلتك في رحاب القرآن
         </Animated.Text>
+        {/* Header */}
 
         {/* Dot Loader */}
         <Animated.View style={[styles.dotsRow, { opacity: dotsOpacity }]}>

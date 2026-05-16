@@ -36,7 +36,7 @@ export default function RootLayout() {
             name="login"
             options={{
               headerShown: false,
-              animation: "none",
+              tabBarStyle: { display: "none" },
             }}
           />
         </Stack>
