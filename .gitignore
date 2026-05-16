@@ -29,7 +29,7 @@ yarn-error.*
 # macOS
 .DS_Store
 *.pem
-
+Hemma-draw.excalidraw
 # local env files
 .env*.local
 .env
