@@ -1,29 +1,25 @@
+// app/(protected)/_layout.tsx
 import { Redirect, Stack } from "expo-router";
-import SplashScreen from "@/components/SplashScreen";
 import { useAuth } from "@/context/AuthContext";
+import SplashScreen from "@/components/SplashScreen";
 
 export const unstable_settings = {
   anchor: "(tabs)",
 };
 
-
 export default function ProtectedLayout() {
-  const { session, loading } = useAuth()
+  const { session, loading } = useAuth();
 
-  
+  if (loading) return <SplashScreen />; 
 
-  if (loading) {
-    return <SplashScreen />;
+  if (!loading && !session) {
+    return <Redirect href="/login" />;
   }
-  if (!session) return <Redirect href="/login" />;
 
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen
-        name="modal"
-        options={{ presentation: "modal", title: "Modal" }}
-      />
+      <Stack.Screen name="modal" options={{ presentation: "modal", title: "Modal" }} />
     </Stack>
   );
 }
