@@ -89,9 +89,16 @@ function InputField({
               color: c.text,
               fontFamily: "Tajawal-Regular",
               textAlign: "right",
+              writingDirection: "rtl",
             },
-            { writingDirection: "rtl", textAlign: "right" },
           ]}
+          // and add these props:
+          textAlign="right"
+          textContentType="none"
+          selection={
+            focused ? undefined : { start: value.length, end: value.length }
+          }
+          textAlignVertical="center"
           placeholder={placeholder}
           placeholderTextColor={c.outlineVariant}
           value={value}

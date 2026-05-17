@@ -1,2 +1,2 @@
 • Input needs to focus on the right while clicking it 
-• Navigating to protected pages after logging in
+• Navigating to protected pages after logging in (DONE)
